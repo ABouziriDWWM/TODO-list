@@ -5,8 +5,11 @@ Cette application simple de to-do list permet à l'utilisateur d'ajouter des tâ
 
 ## Fonctionnalités
 ✅ Ajouter une tâche via une boîte de dialogue (prompt)
+
 ✅ Afficher la tâche dans une liste (ul ou ol)
+
 ✅ Supprimer une tâche individuellement en cliquant sur un bouton
+
 ✅ Gestion dynamique des éléments du DOM
 
 ## Exemple de structure HTML
