@@ -27,12 +27,18 @@ Chaque tâche affichée contient un bouton Supprimer pour l'enlever de la liste
 
 ## Instructions
 1️⃣ Ajoute le HTML ci-dessus dans ton fichier .html
+
 2️⃣ Relie ton fichier JS avec un <script src="..."></script>
+
 3️⃣ Ouvre la page dans un navigateur
+
 4️⃣ Clique sur Ajouter une tâche et commence à gérer ta liste
 
 ## Améliorations possibles
 💡 Remplacer prompt par un champ de saisie plus moderne
+
 💡 Sauvegarder les tâches dans localStorage pour persistance
+
 💡 Ajouter un style CSS pour améliorer l'apparence
+
 💡 Éviter les doublons de tâches
