@@ -4,15 +4,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 
 <body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f0f0f0, #c0c0c0);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .buttons {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .buttons:hover {
+            background-color: #45a049;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        li {
+            background-color: white;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        li button {
+            margin-left: 10px;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        li button:first-of-type {
+            background-color: #f44336;
+            color: white;
+        }
+
+        li button:first-of-type:hover {
+            background-color: #da190b;
+        }
+
+        li button:last-of-type {
+            background-color: #008CBA;
+            color: white;
+        }
+
+        li button:last-of-type:hover {
+            background-color: #005f6a;
+        }
+    </style>
+
+
+    <!-- HTML -->
     <button class="buttons" id="addBtn">Ajouter</button>
     <ul id="liste"></ul>
-    <input id="input" type="text">
-    <script src="index.jsx"></script>
+
+    <script>
+
+        // des elements créé par html et lié en js
+        const addBtn = document.getElementById("addBtn");
+        const liste = document.getElementById("liste");
+
+        let tasks = [];
+
+        addBtn.onclick = function () {
+            let pr = prompt("Votre tâche svp");
+            if (!pr) return; // Ne rien faire si l'utilisateur annule
+
+            tasks.push(pr);
+
+            // Créer li et button
+            const newListItem = document.createElement("li");
+            const newBtnItem = document.createElement("button");
+            const newBtnItem2 = document.createElement("button");
+
+            // Remplir li et buttons
+            newListItem.textContent = pr + " ";
+
+            newBtnItem.textContent = "Supprimer";
+            newBtnItem2.textContent = "Modifier";
+
+            // Ajouter l'action de suppression
+            newBtnItem.onclick = function () {
+                liste.removeChild(newListItem);
+                tasks = tasks.filter((task) => task !== pr);
+                console.log(tasks);
+            };
+
+            // Ajouter l'action de modification
+            newBtnItem2.onclick = function () {
+                let pr = prompt("Votre tâche svp");
+                tasks.pop();
+                if (!pr) return;
+                tasks.push(pr);
+                newListItem.textContent = pr + " ";
+                newListItem.appendChild(newBtnItem);
+                newListItem.appendChild(newBtnItem2);
+            };
+
+            // Ajouter buttons dans li, puis li dans la liste
+            newListItem.appendChild(newBtnItem);
+            newListItem.appendChild(newBtnItem2);
+            liste.prepend(newListItem);
+
+            console.log(tasks);
+        };
+
+    </script>
 </body>
 
 </html>
