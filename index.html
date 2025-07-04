@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TODO List</title>
 </head>
 
 <body>
@@ -16,6 +16,18 @@
             flex-direction: column;
             align-items: center;
             padding: 20px;
+        }
+
+        .title {
+            font-family: 'Arial', sans-serif;
+            font-size: 3rem;
+            color: #4A90E2;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 20vh;
+            margin-bottom: 10vh;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
 
         .buttons {
@@ -77,6 +89,7 @@
 
 
     <!-- HTML -->
+    <h1 class="title"> TODO List</h1>
     <button class="buttons" id="addBtn">Ajouter</button>
     <ul id="liste"></ul>
 
